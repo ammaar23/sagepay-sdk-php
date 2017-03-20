@@ -268,6 +268,10 @@ class SagepayCommon
                 $query = array_merge($query, self::_getCardDetails($paneValues));
                 $query['TxType'] = $txType;
                 $query['CardHolder'] = $billingAddress->firstname . ' ' . $billingAddress->lastname;
+                if ($query['CardType'] == 'PAYPAL') {
+                    $query['PayPalCallbackURL'] = $settings->getPaypalCallbackUrl() . '?vtx=' . $query['VendorTxCode'];
+                    return $query;
+                }
 
                 // Add 3D Secure flag only if the 3d Secure module is enabled for DIRECT.
                 $query['Apply3DSecure'] = $settings->getApply3dSecure();
