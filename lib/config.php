@@ -87,11 +87,11 @@ return array(
     array(
         array(
             'paymentType' => 'MC',
-            'percentage' => 5,
+            'percentage' => 0,
         ),
         array(
             'paymentType' => 'VISA',
-            'fixed' => 3.5,
+            'fixed' => 0,
         ),
     ),
 // Optional setting. if you are a vendor that has a merchant category code of 6012, then you can fill in extra details required for authorisation for Visa transactions
@@ -126,7 +126,7 @@ return array(
 	'vendorEmail' => '',
 // Optional parameter, this value will be used to set the BillingAgreement field in the registration POST
 // A default is value of 0 is used if this parameter is not included in this properties file
-    'billingAgreement' => 1,
+    'billingAgreement' => 0,
 // Mandatory parameter, salt used for hashing the password in the local database	
 // i.e. value: q8W#e1_    
     'customerPasswordSalt' => '',
